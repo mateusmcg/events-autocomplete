@@ -6,8 +6,8 @@
   <mat-form-field class="form-size">
     <input matInput [matAutocomplete]="auto" [formControl]="autoCompleteControl">
     <mat-autocomplete #auto="matAutocomplete" [autoActiveFirstOption]="true">
-      <mat-option *ngFor="let event of filteredOptions | async" [value]="event.name">
-        {{ event.name }}
+      <mat-option *ngFor="let event of filteredOptions | async" [value]="event._id.name">
+        {{ event._id.name }} ({{event.count}} occurrences)
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
