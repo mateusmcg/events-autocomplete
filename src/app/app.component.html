@@ -2,13 +2,12 @@
   <span>Simple Autocomplete WebApp</span>
 </mat-toolbar>
 
-<mat-card flex="80">
-  <button mat-raised-button color="accent" (click)="callApi()">Click me!</button>
-  <mat-form-field>
-    <input type="text" matInput [matAutocomplete]="auto" ([ngModel])="myControl">
-    <mat-autocomplete #auto="matAutocomplete">
-      <mat-option *ngFor="let option of options" [value]="option.event">
-        {{ option.event }}
+<mat-card class="card">
+  <mat-form-field class="form-size">
+    <input matInput [matAutocomplete]="auto" [formControl]="autoCompleteControl">
+    <mat-autocomplete #auto="matAutocomplete" [autoActiveFirstOption]="true">
+      <mat-option *ngFor="let event of filteredOptions | async" [value]="event.name">
+        {{ event.name }}
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
