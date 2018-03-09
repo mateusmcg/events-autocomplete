@@ -15,8 +15,8 @@ import { EventsService } from './app.events.service';
 
 export class AppComponent {
 
-  private autoCompleteControl = new FormControl();
-  private filteredOptions: Observable<any[]>;
+  autoCompleteControl = new FormControl();
+  filteredOptions: Observable<any[]>;
 
   constructor(private eventsService: EventsService) {
     this.filteredOptions = this.autoCompleteControl.valueChanges
