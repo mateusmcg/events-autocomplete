@@ -22,7 +22,7 @@ export class AppComponent {
     this.filteredOptions = this.autoCompleteControl.valueChanges
       .pipe(
         startWith(''),
-        debounceTime(300),
+        debounceTime(100),
         switchMap(val => {
           if (val && val.length >= 2) {
             return this.getEvents(val || '')

@@ -5,7 +5,7 @@
 <mat-card class="card">
   <mat-form-field class="form-size">
     <input placeholder="Pesquise os eventos aqui :)" matInput [matAutocomplete]="auto" [formControl]="autoCompleteControl">
-    <mat-autocomplete #auto="matAutocomplete" [autoActiveFirstOption]="true">
+    <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let event of filteredOptions | async" [value]="event._id.name">
         {{ event._id.name }} ({{event.count}} occurrences)
       </mat-option>
